@@ -1,10 +1,16 @@
 import { useState } from 'react'
 import Home from './pages/Home'
 
+import Layout from './components/Layout'
+
 function App() {
   return (
     <>
-      <Home />
+    <div className="App">
+      <Layout>
+        <Home />
+      </Layout>
+    </div>
     </>
   )
 }
