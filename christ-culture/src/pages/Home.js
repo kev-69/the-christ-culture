@@ -1,24 +1,52 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Home.css'
 
+import homeBg1 from '../assets/apparels/homebg1.PNG'
+import homeBg2 from '../assets/apparels/homebg2.PNG'
+
 const Home = () => {
+    const [currentImage, setCurrentImage] = useState(0);
+    const images = [homeBg1, homeBg2];
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+        setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+        }, 5000);
+        return () => clearInterval(interval);
+    }, [images.length]);
+
   return (
     <div className='home'>
-      {/* Hero Banner */}
-      <div className='hero-banner'>
-        <div className='hero-content'>
-          <h1>The Christ Culture</h1>
-          <p>Faith-inspired apparel and lifestyle products</p>
-          <div className='hero-buttons'>
-            <a href='/shop' className='btn btn-primary'>Shop Now</a>
-          </div>
+        {/* Hero Banner */}
+        <div className='hero-banner-container'>
+        {images.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt={`Christ Culture ${index + 1}`}
+            className={`banner-image ${currentImage === index ? 'active' : ''}`}
+          />
+        ))}
+        <div className="banner-content">
+            <h1 className='banner-overlay'>The Christ Culture</h1>
+            <p className='banner-description'>Faith-inspired apparel and lifestyle products</p>
+            <a href='/shop' className='banner-btn btn btn-primary'>Shop Now</a>
         </div>
-      </div>
+        </div>
 
-      {/* Products */}
+      {/* Featured Products */}
       <section className='featured-section'>
         <h2>Featured Products</h2>
+        <div className="section-header">
+            <h2>King's Essentials</h2>
+            <a href="/shop" className="view-all">View All</a>
+        </div>
         <div className='featured-grid'>
+          <div className='product-card'>
+            <div className='product-image'></div>
+            <h3>Product Title</h3>
+            <p>$29.99</p>
+          </div>
           <div className='product-card'>
             <div className='product-image'></div>
             <h3>Product Title</h3>
