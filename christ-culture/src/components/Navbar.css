@@ -35,6 +35,32 @@
   transition: color 0.3s ease;
 }
 
+.nav-links {
+  text-decoration: none;
+  color: #4b5563;
+  font-size: 0.875rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-link::after {
+  background: #e6ae60;
+  content: '';
+  display: block;
+  transition: width 0.3s ease;
+  height: 2.5px;
+  margin-top: 2px;
+  right: 0;
+  width: 0;
+}
+
+.nav-link:hover::after {
+  color: black;
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+
 .nav-link:hover {
   color: #666;
 }

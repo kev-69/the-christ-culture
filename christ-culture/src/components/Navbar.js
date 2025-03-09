@@ -45,8 +45,8 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMobile && isMenuOpen && (
         <div className="mobile-menu">
-          <a href="#" className="nav-link">Shop</a>
-          <a href="#" className="nav-link">Collections</a>
+          <a href="/shop" className="nav-link">Shop</a>
+          <a href="/collections" className="nav-link">Collections</a>
         </div>
       )}
     </nav>
