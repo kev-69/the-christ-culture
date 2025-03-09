@@ -1,16 +1,14 @@
 import { useState } from 'react'
 import Home from './pages/Home'
-
-import Layout from './components/Layout'
+import Shop from './pages/Shop'
+import Collections from './pages/Collections'
 
 function App() {
   return (
     <>
-    <div className="App">
-      <Layout>
-        <Home />
-      </Layout>
-    </div>
+      <Home />
+      <Shop />
+      <Collections />
     </>
   )
 }
