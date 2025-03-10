@@ -1,12 +1,22 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import './Home.css'
 
 import homeBg1 from '../assets/banners/homebg1.PNG'
 import homeBg2 from '../assets/banners/homebg2.PNG'
 
+import { ApparelsData } from '../data'
+
 const Home = () => {
     const [currentImage, setCurrentImage] = useState(0);
     const images = [homeBg1, homeBg2];
+
+    // Get 8 random apparels from the data
+    const featuredApparels = useMemo(() => {
+      const shuffled = [...ApparelsData].sort(() => 0.5 - Math.random());
+      return shuffled.slice(0, 8);
+    }, []);
+    
+    // const featuredApparels = getRandomApparels();
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -36,32 +46,36 @@ const Home = () => {
 
       {/* Featured Products */}
       <section className='featured-section'>
-        <h2>Featured Products</h2>
         <div className="section-header">
             <h2>King's Essentials</h2>
             <a href="/shop" className="view-all">View All</a>
         </div>
         <div className='featured-grid'>
-          <div className='product-card'>
-            <div className='product-image'></div>
-            <h3>Product Title</h3>
-            <p>$29.99</p>
-          </div>
-          <div className='product-card'>
-            <div className='product-image'></div>
-            <h3>Product Title</h3>
-            <p>$29.99</p>
-          </div>
-          <div className='product-card'>
-            <div className='product-image'></div>
-            <h3>Product Title</h3>
-            <p>$29.99</p>
-          </div>
-          <div className='product-card'>
-            <div className='product-image'></div>
-            <h3>Product Title</h3>
-            <p>$29.99</p>
-          </div>
+          {featuredApparels.map((apparel) => (
+            <div key={apparel.id} className='product-card'>
+              <div className='product-image-container'>
+                <img 
+                  src={apparel.images.back} 
+                  alt={`${apparel.title} back view`}
+                  className="product-image back"
+                />
+                <img 
+                  src={apparel.images.front} 
+                  alt={`${apparel.title} front view`}
+                  className="product-image front"
+                />
+              </div>
+              <div className="product-info">
+                <div className="product-header">
+                  <h3>{apparel.title}</h3>
+                  <p className="product-price">GHS{apparel.price}</p>
+                </div>
+                <button className="view-button">
+                  View Details <span className="star">★</span>
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
