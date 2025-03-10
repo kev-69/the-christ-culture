@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import './Home.css'
 
-import homeBg1 from '../assets/apparels/homebg1.PNG'
-import homeBg2 from '../assets/apparels/homebg2.PNG'
+import homeBg1 from '../assets/banners/homebg1.PNG'
+import homeBg2 from '../assets/banners/homebg2.PNG'
 
 const Home = () => {
     const [currentImage, setCurrentImage] = useState(0);
