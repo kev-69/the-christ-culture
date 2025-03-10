@@ -1,6 +1,8 @@
 import React from 'react'
 import './Shop.css'
 
+import { ApparelsData } from '../data'
+
 const Shop = () => {
   return (
     <div className='shop'>
@@ -10,8 +12,42 @@ const Shop = () => {
           <p>Choose from a varierty of mockups</p>
         </div>
       </div>
+
+      <div className='apparels'>
+        <h2>Apparels</h2>
+        <div className="apparels-grid">
+          {ApparelsData.map((apparel) => (
+            <ApparelCard key={apparel.id} apparel={apparel} />
+          ))}
+        </div>
+      </div>
     </div>
   )
 }
+
+const ApparelCard = ({ apparel }) => {
+  return (
+    <div className='apparel-card'>
+      <div className="apparel-image-container">
+        <img 
+          src={apparel.images.back} 
+          alt={`${apparel.title} back view`}
+          className="apparel-image back"
+        />
+        <img 
+          src={apparel.images.front} 
+          alt={`${apparel.title} front view`}
+          className="apparel-image front"
+        />
+      </div>
+      <div className="apparel-info">
+        <h3 className="apparel-title">{apparel.title}</h3>
+        <button className="view-button">
+          View Details <span className="star">★</span>
+        </button>
+      </div>
+    </div>
+  );
+};
 
 export default Shop

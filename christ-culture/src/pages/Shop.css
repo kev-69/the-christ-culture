@@ -34,3 +34,132 @@
     font-size: 1.2rem;
     margin-bottom: 2rem;
   }
+
+  /* Apparels Section */
+  .apparels {
+    padding: 2rem 0;
+    width: 1300px;
+    margin: 0 auto;
+  }
+
+  .apparels h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-family: 'Julius Sans One', sans-serif;
+    text-align: center;
+  }
+  
+  .apparels h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #E6AE60;
+    margin: 0.5rem auto 0;
+  }
+
+.apparels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+  padding: 0 1rem;
+}
+
+.apparel-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.apparel-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.apparel-image-container {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+  overflow: hidden;
+}
+
+.apparel-image {
+  position: absolute;
+  background: #c2c2c2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease;
+}
+
+.apparel-image.back {
+  opacity: 1;
+}
+
+.apparel-image.front {
+  opacity: 0;
+}
+
+.apparel-card:hover .apparel-image.back {
+  opacity: 0;
+}
+
+.apparel-card:hover .apparel-image.front {
+  opacity: 1;
+}
+
+.apparel-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.apparel-title {
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
+  font-family: "Julius Sans One";
+}
+
+.view-button {
+  background-color: white;
+  color: black;
+  border: 2px solid #1a1a1a;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.view-button:hover {
+  background-color: #333;
+  color: white;
+}
+
+.star {
+  margin-left: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .apparels {
+    padding: 1rem 0;
+    width: 100%;
+  }
+
+  .apparels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 0 1rem;
+  }
+}
