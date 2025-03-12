@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet';
 import './Shop.css'
 
 import { ApparelsData } from '../data'
@@ -28,6 +29,10 @@ const Shop = () => {
 const ApparelCard = ({ apparel }) => {
   return (
     <div className='apparel-card'>
+      <Helmet>
+        <title>Shop | The Christ Culture</title>
+        <meta name="description" content={`Get the ${apparel.title} from Christ Culture`} />
+      </Helmet>
       <div className="apparel-image-container">
         <img 
           src={apparel.images.back} 
