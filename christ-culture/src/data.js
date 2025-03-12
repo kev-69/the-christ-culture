@@ -1,3 +1,5 @@
+import saviorfront from './assets/apparels/savior_front.png'
+import saviorback from './assets/apparels/savior_back.png'
 import salvationfront from './assets/apparels/salvation_front.png'
 import salvationback from './assets/apparels/salvation_back.png'
 import keepprayingfront from './assets/apparels/keep_praying_front.png'
@@ -136,6 +138,17 @@ const ApparelsData = [
     },
     {
         id: 11,
+        title: "Savior Of The World",
+        price: 180,
+        images: {
+            front: saviorfront,
+            back: saviorback
+        },
+        isInStock: true,
+        discount: 0
+    },
+    {
+        id: 12,
         title: "Salvation",
         price: 180,
         images: {
