@@ -1,0 +1,254 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .product-modal {
+    background-color: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 1000px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn 0.3s ease; /* Add animation for smoother appearance */
+  }
+
+  .product-modal::-webkit-scrollbar {
+    display: none;
+  }
+  
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+  }
+  
+  .close-modal:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+    transform: scale(1.1);
+  }
+  
+  .modal-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 30px;
+  }
+  
+  .modal-left {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal-image-container {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  .modal-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    background: #c2c2c2;
+  }
+  
+  .image-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .image-select-btn {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .image-select-btn.active {
+    border-color: #E6AE60;
+    background: #f5eadb;
+    font-weight: bold;
+  }
+  
+  .modal-title {
+    font-family: "Julius Sans One", sans-serif;
+    font-size: 1.5rem;
+    margin: 15px 0;
+    text-align: center;
+  }
+  
+  .modal-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .product-description h3,
+  .material-selection h3,
+  .product-price h3 {
+    font-family: "Julius Sans One", sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .material-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .material-btn {
+    flex: 1;
+    padding: 10px 15px;
+    border: 2px solid #333;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .material-btn.selected {
+    background-color: #333;
+    color: white;
+  }
+  
+  .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #E6AE60;
+  }
+  
+  .add-to-cart-btn {
+    background-color: #E6AE60;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
+  }
+  
+  .add-to-cart-btn:hover {
+    background-color: #d49b4b;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .modal-content {
+      grid-template-columns: 1fr;
+      padding: 15px;
+      gap: 15px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    
+    .modal-image-container {
+      max-height: 350px;
+    }
+    
+    .modal-title {
+      font-size: 1.2rem;
+    }
+    
+    /* .product-modal {
+      width: 95%;
+      max-height: 85vh;
+      margin: 0 auto;
+    } */
+
+    .product-description p {
+        font-size: 0.95rem;
+      }
+      
+      .material-buttons {
+        gap: 6px;
+      }
+      
+      .material-btn {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+      }
+      
+      .add-to-cart-btn {
+        padding: 10px 15px;
+        font-size: 1rem;
+        margin-top: 0;
+      }
+  }
+
+/* Add extra small screen handling */
+@media (max-width: 480px) {
+    .product-modal {
+      max-width: 95%;
+      margin: 0 auto;
+      max-height: 90vh;
+    }
+    
+    .modal-content {
+      padding: 10px;
+      gap: 10px;
+    }
+    
+    .close-modal {
+      top: 10px;
+      right: 10px;
+      width: 35px;
+      height: 35px;
+    }
+    
+    .image-select-btn {
+      padding: 6px;
+      font-size: 0.85rem;
+    }
+
+    .modal-title {
+        font-size: 1.1rem;
+      }
+    }
