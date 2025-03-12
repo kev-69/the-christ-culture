@@ -5,6 +5,15 @@ import './Home.css'
 import homeBg1 from '../assets/banners/homebg1.PNG'
 import homeBg2 from '../assets/banners/homebg2.PNG'
 
+// Import gallery images - replace with your actual image paths
+import gallery1 from '../assets/gallery/images1.jpg'
+import gallery2 from '../assets/gallery/images2.jpg'
+import gallery3 from '../assets/gallery/images3.jpg'
+import gallery4 from '../assets/gallery/images4.jpg'
+import gallery5 from '../assets/gallery/images5.jpg'
+import gallery6 from '../assets/gallery/images6.jpg'
+import gallery7 from '../assets/gallery/images7.jpg'
+
 import { ApparelsData } from '../data'
 
 const Home = () => {
@@ -17,7 +26,43 @@ const Home = () => {
       return shuffled.slice(0, 8);
     }, []);
     
-    // const featuredApparels = getRandomApparels();
+    const galleryImagers = useMemo(() => [
+      {
+        id: 1,
+        image: gallery1,
+        title: 'Customer wearing The Christ Culture apparel'
+      },
+      {
+        id: 2,
+        image: gallery2,
+        title: 'Customer wearing The Christ Culture apparel'
+      },
+      {
+        id: 3,
+        image: gallery3,
+        title: 'Customer wearing The Christ Culture apparel'
+      },
+      {
+        id: 4,
+        image: gallery4,
+        title: 'Customer wearing The Christ Culture apparel'
+      },
+      {
+        id: 5,
+        image: gallery5,
+        title: 'Customer wearing The Christ Culture apparel'
+      },
+      {
+        id: 6,
+        image: gallery6,
+        title: 'Customer wearing The Christ Culture apparel'
+      },
+      {
+        id: 7,
+        image: gallery7,
+        title: 'Customer wearing The Christ Culture apparel',
+      }
+    ], []);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -88,6 +133,22 @@ const Home = () => {
       </section>
 
       {/* Gallery */}
+      <section className='gallery-section'>
+          <div className="section-header">
+              <h2>Our Community</h2>
+              <span className='section-subtitle'>People wearing our product</span>
+          </div>
+
+          <div className="gallery-scroll-container">
+            <div className="gallery-scroll">
+            {galleryImagers.map((gallery) => (
+              <div key={gallery.id} className="gallery-item">
+                <img src={gallery.image} alt={gallery.title} className="gallery-image" />
+              </div>
+            ))}
+            </div>
+          </div>
+      </section>
 
       {/* Reviews */}
 
@@ -96,7 +157,7 @@ const Home = () => {
         <div className='about-content'>
           <h2>About Our Mission</h2>
           <p>The Christ Culture is dedicated to creating meaningful products that inspire faith and encourage believers in their daily walk.</p>
-          <a href='/about' className='btn btn-outline'>Learn More</a>
+          {/* <a href='/about' className='btn btn-outline'>Learn More</a> */}
         </div>
       </section>
     </div>
