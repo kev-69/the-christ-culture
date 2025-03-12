@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react'
+import ProductModal from '../components/ProductModal';
 import { Helmet } from 'react-helmet';
 import './Home.css'
 
@@ -18,10 +19,12 @@ import { ApparelsData } from '../data'
 
 const Home = () => {
     const [currentImage, setCurrentImage] = useState(0);
+    const [selectedProduct, setSelectedProduct] = useState(null);
+    const [modalOpen, setModalOpen] = useState(false);
     const images = [homeBg1, homeBg2];
 
     // Get 8 random apparels from the data
-    const featuredApparels = useMemo(() => {
+    const Apparels = useMemo(() => {
       const shuffled = [...ApparelsData].sort(() => 0.5 - Math.random());
       return shuffled.slice(0, 8);
     }, []);
@@ -64,6 +67,15 @@ const Home = () => {
       }
     ], []);
 
+    const openProductModal = (product) => {
+      setSelectedProduct(product);
+      setModalOpen(true);
+    };
+
+    const closeProductModal = () => {
+      setModalOpen(false);
+    };
+
     useEffect(() => {
         const interval = setInterval(() => {
         setCurrentImage((prevImage) => (prevImage + 1) % images.length);
@@ -97,14 +109,14 @@ const Home = () => {
         </div>
         </div>
 
-      {/* Featured Products */}
-      <section className='featured-section'>
+      {/* Products Section */}
+      <section className='products-section'>
         <div className="section-header">
             <h2>King's Essentials</h2>
             <a href="/shop" className="view-all">View All</a>
         </div>
-        <div className='featured-grid'>
-          {featuredApparels.map((apparel) => (
+        <div className='products-grid'>
+          {Apparels.map((apparel) => (
             <div key={apparel.id} className='product-card'>
               <div className='product-image-container'>
                 <img 
@@ -119,11 +131,11 @@ const Home = () => {
                 />
               </div>
               <div className="product-info">
-                <div className="product-header">
-                  <h3>{apparel.title}</h3>
-                  <p className="product-price">GHS{apparel.price}</p>
-                </div>
-                <button className="view-button">
+                <h3 className="product-title">{apparel.title}</h3>
+                <button 
+                  className="view-button"
+                  onClick={() => openProductModal(apparel)}
+                >
                   View Details <span className="star">★</span>
                 </button>
               </div>
@@ -160,6 +172,13 @@ const Home = () => {
           {/* <a href='/about' className='btn btn-outline'>Learn More</a> */}
         </div>
       </section>
+
+      {/* Product Modal */}
+      <ProductModal
+        product={selectedProduct}
+        isOpen={modalOpen}
+        onClose={closeProductModal}
+      />
     </div>
   )
 }
