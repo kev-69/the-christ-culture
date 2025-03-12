@@ -1,9 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ProductModal.css';
 
 const ProductModal = ({ product, isOpen, onClose }) => {
   const [selectedMaterial, setSelectedMaterial] = useState('light');
-  const [viewFront, setViewFront] = useState(true);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  
+  // Convert object images to array for mapping
+  const productImages = product ? [
+    { id: 'front', src: product.images.front, alt: `${product.title} front view` },
+    { id: 'back', src: product.images.back, alt: `${product.title} back view` },
+    { id: 'person1', src: product.images.person1, alt: `${product.title} Person 1` },
+    { id: 'person2', src: product.images.person2, alt: `${product.title} Person 2` }
+  ] : [];
+  
+  // Reset selected image when modal opens with a new product
+  useEffect(() => {
+    if (isOpen && product) {
+      setSelectedImageIndex(0);
+    }
+  }, [isOpen, product]);
   
   if (!isOpen || !product) return null;
 
@@ -26,25 +41,25 @@ const ProductModal = ({ product, isOpen, onClose }) => {
           <div className="modal-left">
             <div className="modal-image-container">
               <img 
-                src={viewFront ? product.images.front : product.images.back} 
-                alt={product.title}
+                src={productImages[selectedImageIndex].src}
+                alt={productImages[selectedImageIndex].alt}
                 className="modal-image"
               />
             </div>
-            <div className="image-selector">
-              <button 
-                className={`image-select-btn ${viewFront ? 'active' : ''}`}
-                onClick={() => setViewFront(true)}
-              >
-                Front View
-              </button>
-              <button 
-                className={`image-select-btn ${!viewFront ? 'active' : ''}`}
-                onClick={() => setViewFront(false)}
-              >
-                Back View
-              </button>
+            <div className="image-gallery-container">
+              <div className="image-gallery">
+                {productImages.map((image, index) => (
+                  <div 
+                    key={image.id}
+                    className={`gallery-thumbnail ${selectedImageIndex === index ? 'active' : ''}`}
+                    onClick={() => setSelectedImageIndex(index)}
+                  >
+                    <img src={image.src} alt={image.alt} className='active-img' />
+                  </div>
+                ))}
+              </div>
             </div>
+
             <h2 className="modal-title">{product.title}</h2>
           </div>
           
