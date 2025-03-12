@@ -22,7 +22,8 @@ import breadoflifefront from './assets/apparels/bread_of_life_front.png'
 import breadoflifeback from './assets/apparels/bread_of_life_back.png'
 import angelsondutyfront from './assets/apparels/angels_on_duty_front.png'
 import angelsondutyback from './assets/apparels/angels_on_duty_back.png'
-// import disciplesback from './assets/apparels/salvation_front.jpg'
+import untilfront from './assets/apparels/until_front.png'
+import untilback from './assets/apparels/until_back.png'
 
 
 const ApparelsData = [
@@ -158,6 +159,17 @@ const ApparelsData = [
         isInStock: true,
         discount: 0
     },
+    {
+        id: 13,
+        title: "Until I Wash Thy Feet",
+        price: 180,
+        images: {
+            front: untilfront,
+            back: untilback
+        },
+        isInStock: true,
+        discount: 0
+    }
 ];
 
 export { ApparelsData }
