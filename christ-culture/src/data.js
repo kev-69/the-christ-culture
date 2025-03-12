@@ -30,7 +30,8 @@ const ApparelsData = [
     {
         id: 1,
         title: "Angels On Duty",
-        price: 180,
+        lightPrice: 180,
+        heavyPrice: 230,
         images: {
             front: angelsondutyfront,
             back: angelsondutyback
@@ -41,7 +42,8 @@ const ApparelsData = [
     {
         id: 2,
         title: "Bread Of Life",
-        price: 180,
+        lightPrice: 180,
+        heavyPrice: 230,
         images: {
             front: breadoflifefront,
             back: breadoflifeback
@@ -52,7 +54,8 @@ const ApparelsData = [
     {
         id: 3,
         title: "Chosen Generation",
-        price: 180,
+        lightPrice: 180,
+        heavyPrice: 230,
         images: {
             front: chosenfront,
             back: chosenback
@@ -63,7 +66,8 @@ const ApparelsData = [
     {
         id: 4,
         title: "Christ Strenght",
-        price: 180,
+        lightPrice: 180,
+        heavyPrice: 230,
         images: {
             front: christstrengthfront,
             back: christstrengthback
@@ -74,7 +78,8 @@ const ApparelsData = [
     {
         id: 5,
         title: "Disciples",
-        price: 180,
+        lightPrice: 180,
+        heavyPrice: 230,
         images: {
             front: disciplesfront,
             back: disciplesback
@@ -85,7 +90,8 @@ const ApparelsData = [
     {
         id: 6,
         title: "Empowered Through Christ",
-        price: 180,
+        lightPrice: 180,
+        heavyPrice: 230,
         images: {
             front: empoweredfront,
             back: empoweredback
@@ -96,7 +102,8 @@ const ApparelsData = [
     {
         id: 7,
         title: "Eternal Faith",
-        price: 180,
+        lightPrice: 180,
+        heavyPrice: 230,
         images: {
             front: eternalfaithfront,
             back: eternalfaithback
@@ -107,7 +114,8 @@ const ApparelsData = [
     {
         id: 8,
         title: "God's Plan",
-        price: 180,
+        lightPrice: 180,
+        heavyPrice: 230,
         images: {
             front: godsplanfront,
             back: godsplanback
@@ -118,7 +126,8 @@ const ApparelsData = [
     {
         id: 9,
         title: "Holy Spirit",
-        price: 180,
+        lightPrice: 180,
+        heavyPrice: 230,
         images: {
             front: holyspiritfront,
             back: holyspiritback
@@ -129,7 +138,8 @@ const ApparelsData = [
     {
         id: 10,
         title: "Keep Praying",
-        price: 180,
+        lightPrice: 180,
+        heavyPrice: 230,
         images: {
             front: keepprayingfront,
             back: keepprayingback
@@ -140,7 +150,8 @@ const ApparelsData = [
     {
         id: 11,
         title: "Savior Of The World",
-        price: 180,
+        lightPrice: 180,
+        heavyPrice: 230,
         images: {
             front: saviorfront,
             back: saviorback
@@ -151,7 +162,8 @@ const ApparelsData = [
     {
         id: 12,
         title: "Salvation",
-        price: 180,
+        lightPrice: 180,
+        heavyPrice: 230,
         images: {
             front: salvationfront,
             back: salvationback
@@ -162,7 +174,8 @@ const ApparelsData = [
     {
         id: 13,
         title: "Until I Wash Thy Feet",
-        price: 180,
+        lightPrice: 180,
+        heavyPrice: 230,
         images: {
             front: untilfront,
             back: untilback
