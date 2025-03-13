@@ -121,7 +121,7 @@ const Home = () => {
               <div className='product-image-container'>
                 <img 
                   src={apparel.images.back} 
-                  alt={`${apparel.title} back view`}
+                  alt={`${apparel.name} back view`}
                   className="product-image back"
                 />
                 <img 
@@ -131,7 +131,7 @@ const Home = () => {
                 />
               </div>
               <div className="product-info">
-                <h3 className="product-title">{apparel.title}</h3>
+                <h3 className="product-title">{apparel.name}</h3>
                 <button 
                   className="view-button"
                   onClick={() => openProductModal(apparel)}

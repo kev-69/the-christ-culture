@@ -61,17 +61,17 @@ const ApparelCard = ({ apparel, openProductModal }) => {
       <div className="apparel-image-container">
         <img 
           src={apparel.images.back} 
-          alt={`${apparel.title} back view`}
+          alt={`${apparel.name} back view`}
           className="apparel-image back"
         />
         <img 
           src={apparel.images.front} 
-          alt={`${apparel.title} front view`}
+          alt={`${apparel.name} front view`}
           className="apparel-image front"
         />
       </div>
       <div className="apparel-info">
-        <h3 className="apparel-title">{apparel.title}</h3>
+        <h3 className="apparel-title">{apparel.name}</h3>
         <button 
           className="view-button"
           onClick={() => openProductModal(apparel)}
