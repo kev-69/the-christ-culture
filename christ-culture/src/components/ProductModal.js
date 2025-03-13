@@ -32,6 +32,24 @@ const ProductModal = ({ product, isOpen, onClose }) => {
     onClose();
   };
 
+  // WhatsApp order function
+  const openWhatsAppOrder = () => {
+    // Replace with your actual WhatsApp business number (with country code)
+    const phoneNumber = "+233257677987"; // Update with your actual number
+    
+    // Create a pre-filled message
+    const message = `Hello! I'd like to make an enquiry about your product: \n\n${product.title}\nMaterial: ${selectedMaterial === 'light' ? 'Semi-Heavy' : 'Heavy'} Cotton \nPrice: GHS ${selectedMaterial === 'light' ? product.lightPrice : product.heavyPrice} \n\nThank you!`;
+
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(message);
+    
+    // Create WhatsApp URL
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    
+    // Open in new tab
+    window.open(whatsappURL, '_blank');
+  };
+
   return (
     <div className="modal-overlay" onClick={handleClose}>
       <div className="product-modal" onClick={(e) => e.stopPropagation()}>
@@ -60,30 +78,30 @@ const ProductModal = ({ product, isOpen, onClose }) => {
               </div>
             </div>
 
-            <h2 className="modal-title">{product.title}</h2>
+            {/* <h2 className="modal-title">{product.title}</h2> */}
           </div>
           
           <div className="modal-right">
             <div className="product-description">
-              <h3>Description</h3>
+              <h3>{product.title}</h3>
               <p>{product.description || 'A high-quality apparel item from The Christ Culture, designed to inspire faith and encourage believers in their daily walk.'}</p>
-              <p>{product.quote}</p>
+              <p>Inspired by {product.quote}</p>
             </div>
             
             <div className="material-selection">
-              <h3>Select Material</h3>
+              <h3>Select Cotton type</h3>
               <div className="material-buttons">
                 <button 
                   className={`material-btn ${selectedMaterial === 'light' ? 'selected' : ''}`}
                   onClick={() => setSelectedMaterial('light')}
                 >
-                  Light Cotton
+                  Semi - Heavy
                 </button>
                 <button 
                   className={`material-btn ${selectedMaterial === 'heavy' ? 'selected' : ''}`}
                   onClick={() => setSelectedMaterial('heavy')}
                 >
-                  Heavy Cotton
+                  Heavy
                 </button>
               </div>
             </div>
@@ -97,7 +115,10 @@ const ProductModal = ({ product, isOpen, onClose }) => {
               </p>
             </div>
             
-            <button className="add-to-cart-btn">
+            <button 
+              className="add-to-cart-btn"
+              onClick={openWhatsAppOrder}
+            >
               Send Order Request
             </button>
           </div>
