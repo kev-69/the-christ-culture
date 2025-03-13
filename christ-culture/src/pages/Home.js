@@ -112,7 +112,7 @@ const Home = () => {
       {/* Products Section */}
       <section className='products-section'>
         <div className="section-header">
-            <h2>King's Essentials</h2>
+            <h2>Julians's Essentials</h2>
             <a href="/shop" className="view-all">View All</a>
         </div>
         <div className='products-grid'>
@@ -169,7 +169,6 @@ const Home = () => {
         <div className='about-content'>
           <h2>About Our Mission</h2>
           <p>The Christ Culture is dedicated to creating meaningful products that inspire faith and encourage believers in their daily walk.</p>
-          {/* <a href='/about' className='btn btn-outline'>Learn More</a> */}
         </div>
       </section>
 
