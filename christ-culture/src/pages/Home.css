@@ -1,318 +1,316 @@
 @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
 
 .hero-banner-container {
-    position: relative;
-    width: 100%;
-    height: 75vh;
-    overflow: hidden;
-  }
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  overflow: hidden;
+}
 
-  .hero-banner-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
-    z-index: 2;  /* Above the images but below the content */
-  }
-  
-  .banner-image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    opacity: 0; /* Start completely invisible */
-    transition: opacity 1.5s cubic-bezier(0.4, 0.0, 0.2, 1); /* Smoother easing */
-    transform-origin: center;
-    z-index: 1;
-  }
-  
-  .banner-image.active {
-    opacity: 0.8;
-    animation: gentleZoom 8s ease-out forwards; /* Slower, more subtle zoom */
-    z-index: 1;
-  }
-  
-  @keyframes gentleZoom {
-    0% {
-      transform: scale(1.1); /* Less dramatic starting scale */
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-
-  .banner-content {
-    z-index: 3;
-  }
-  
-  .banner-overlay {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    font-family: 'Julius Sans One', sans-serif;
-    font-size: 4rem;
-    font-weight: 500;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    z-index: 2;
-    width: 90%;
-    opacity: 0;
-    animation: fadeInUp 0.8s ease-out forwards;
-  }
-  
-  .banner-description {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    font-size: 1.2rem;
-    max-width: 600px;
-    z-index: 2;
-    width: 90%;
-    opacity: 0;
-    animation: fadeInUp 0.8s ease-out 0.3s forwards;
-  }
-  
-  .banner-btn {
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    opacity: 0;
-    animation: fadeInUp 0.8s ease-out 0.6s forwards;
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translate(-50%, 20px);
-    }
-    to {
-      opacity: 1;
-      transform: translate(-50%, -50%);
-    }
-  }
-  
-  .banner-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 1;
-  }
-  
-  .btn {
-    padding: 0.8rem 1.5rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    font-family: "Julius Sans One"
-  }
-  
-  .btn-primary {
-    color: white;
-    background-color: transparent;
-    border: 2px solid white;
-  }
-  
-  /* Featured Section */
-  .products-section {
-    padding: 4rem 2rem;
-    text-align: center;
-    max-width: 1300px;
-    margin: 0 auto;
-  }
-  
-  .products-section h2 {
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    font-family: 'Julius Sans One', sans-serif;
-  }
-  
-
-  .section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-  }
-  
-  .section-header h2 {
-    margin: 0;
-    font-size: 1rem;
-  }
-  
-  .section-header h2::after {
-    content: '';
-    display: block;
-    width: 100px;
-    height: 3px;
-    background-color: #E6AE60;
-    margin: 0.5rem 0 0;
-  }  
-
-  .view-all {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    transition: all 0.3s ease;
-  }
-
-  .view-all::after {
-    background: #e6ae60;
-    content: '';
-    display: block;
-    transition: width 0.3s ease;
-    height: 2.5px;
-    margin-top: 2px;
-    right: 0;
-    width: 0;
-  }
-  
-  .view-all:hover {
-    color: #666;
-  }
-
-  .view-all:hover::after {
-    color: black;
-    width: 100%;
-    left: 0;
-    right: auto;
-  }
-  
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-  
-  .product-card {
-    background-color: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.hero-banner-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+  z-index: 2;  /* Above the images but below the content */
 }
   
-  .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  }
+.banner-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0; /* Start completely invisible */
+  transition: opacity 1.5s cubic-bezier(0.4, 0.0, 0.2, 1); /* Smoother easing */
+  transform-origin: center;
+  z-index: 1;
+}
   
-  .product-image-container {
-    position: relative;
-    width: 100%;
-    padding-top: 100%; /* 1:1 Aspect Ratio */
-    overflow: hidden;
-  }
+.banner-image.active {
+  opacity: 0.8;
+  animation: gentleZoom 8s ease-out forwards; /* Slower, more subtle zoom */
+  z-index: 1;
+}
   
-  .product-image {
-    position: absolute;
-    background: #c2c2c2;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 0.4s ease;
+@keyframes gentleZoom {
+  0% {
+    transform: scale(1.1); /* Less dramatic starting scale */
   }
-  
-  .product-image.back {
-    opacity: 1;
+  100% {
+    transform: scale(1);
   }
+}
 
-  .product-image.front {
+.banner-content {
+  z-index: 3;
+}
+  
+.banner-overlay {
+  top: 45%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 4rem;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+  
+.banner-description {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+  max-width: 600px;
+  z-index: 2;
+  width: 90%;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.3s forwards;
+}
+  
+banner-btn {
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.6s forwards;
+  position: absolute;
+}
+
+@keyframes fadeInUp {
+  from {
     opacity: 0;
+    transform: translate(-50%, 20px);
   }
-  
-  .product-card:hover .product-image.back {
-    opacity: 0;
-  }
-  
-  .product-card:hover .product-image.front {
+  to {
     opacity: 1;
+    transform: translate(-50%, -50%);
   }
+}
   
-  .product-info {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 85px; 
-    justify-content: space-between;
-  }
+.banner-container::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  content: '';
+}
+  
+.btn {
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-family: "Julius Sans One";
+  padding: 0.8rem 1.5rem;
+}
+  
+.btn-primary {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+  
+/* Featured Section */
+.products-section {
+  text-align: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+  
+.products-section h2 {
+  font-size: 2rem;
+  font-family: 'Julius Sans One', sans-serif;
+  margin-bottom: 2rem;
+}
+  
+.section-header {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  display: flex;
+}
+  
+.section-header h2 {
+  font-size: 1rem;
+  margin: 0;
+}
+  
+.section-header h2::after {
+  content: '';
+  width: 100px;
+  height: 3px;
+  background-color: #E6AE60;
+  margin: 0.5rem 0 0;
+  display: block;
+}  
 
-  .product-title {
-    font-size: 1rem;
-    font-family: "Julius Sans One", sans-serif;
-    margin: 0;
-    text-align: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    /* -webkit-line-clamp: 2; Limit to 2 lines */
-    -webkit-box-orient: vertical;
-    max-height: 2.4rem; /* Approximately 2 lines of text */
-  }
-  
-  .product-card .view-button {
-    background-color: white;
-    color: black;
-    border: 2px solid #1a1a1a;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    width: fit-content;
-    margin: 0 auto;
-  }
+.view-all {
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  color: #333;
+}
 
-  .product-card .view-button:hover {
-    background-color: #333;
-    color: white;
-  }
+.view-all::after {
+  content: '';
+  display: block;
+  transition: width 0.3s ease;
+  height: 2.5px;
+  margin-top: 2px;
+  right: 0;
+  width: 0;
+  background: #e6ae60;
+}
   
-  
-  /* About Section */
-  .about-section {
-    padding: 4rem 2rem;
-    background-color: #f5f5f5;
-    text-align: center;
-  }
-  
-  .about-content {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .about-content h2 {
-    margin-bottom: 1rem;
-  }
-  
-  .about-content p {
-    margin-bottom: 2rem;
-  }
-  
-  .btn-outline {
-    color: #333;
-    border-color: #333;
-  }
+.view-all:hover {
+  color: #666;
+}
 
-  /* Gallery Section */
+.view-all:hover::after {
+  color: black;
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+  
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+  
+.product-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+  
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+  
+.product-image-container {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+  overflow: hidden;
+}
+  
+.product-image {
+  position: absolute;
+  background: #c2c2c2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease;
+}
+  
+.product-image.back {
+  opacity: 1;
+}
+
+.product-image.front {
+  opacity: 0;
+}
+  
+.product-card:hover .product-image.back {
+  opacity: 0;
+}
+  
+.product-card:hover .product-image.front {
+  opacity: 1;
+}
+  
+.product-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 85px; 
+  justify-content: space-between;
+}
+
+.product-title {
+  font-size: 1rem;
+  font-family: "Julius Sans One", sans-serif;
+  margin: 0;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  max-height: 2.4rem; /* Approximately 2 lines of text */
+}
+  
+.product-card .view-button {
+  background-color: white;
+  color: black;
+  border: 2px solid #1a1a1a;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.product-card .view-button:hover {
+  background-color: #333;
+  color: white;
+}
+  
+  
+/* About Section */
+.about-section {
+  padding: 4rem 2rem;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+  
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+  
+.about-content h2 {
+  margin-bottom: 1rem;
+}
+  
+.about-content p {
+  margin-bottom: 2rem;
+}
+  
+.btn-outline {
+  color: #333;
+  border-color: #333;
+}
+
+/* Gallery Section */
 .gallery-section {
   padding: 4rem 0;
   background-color: #f9f9f9;
@@ -413,13 +411,13 @@
 
 
 
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .hero-content h1 {
-      font-size: 2.5rem;
-    }
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
 
-    .banner-overlay {
+  .banner-overlay {
     position: absolute;
     top: 45%;
     left: 50%;
@@ -461,51 +459,51 @@
     animation: fadeInUp 0.8s ease-out 0.6s forwards;
   }
     
-      .banner-content h1 {
-        font-size: 2.5rem;
-      }
+  .banner-content h1 {
+    font-size: 2.5rem;
+  }
     
-      .banner-content p {
-        font-size: 1rem;
-      }
+  .banner-content p {
+    font-size: 1rem;
+  }
     
-    .hero-buttons {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .products-section {
-        padding: 2rem 1rem;
-        text-align: center;
-      }
-    
-    .products-grid {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 0.5rem;
-    }
-
-    .gallery-section {
-      padding: 2rem 0;
-    }
-    
-    .gallery-item {
-      width: 180px;
-      height: 250px;
-    }
-    
-    .gallery-scroll {
-      padding: 0.5rem 0;
-      gap: 0.5rem;
-    }
-    
-    .gallery-section .section-header h2 {
-      font-size: 1.5rem;
-    }
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
-  @media (max-width: 480px) {
-    .gallery-item {
-      width: 150px;
-      height: 200px;
-    }
+  .products-section {
+    padding: 2rem 1rem;
+    text-align: center;
   }
+    
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .gallery-section {
+    padding: 2rem 0;
+  }
+    
+  .gallery-item {
+    width: 180px;
+    height: 250px;
+  }
+    
+  .gallery-scroll {
+    padding: 0.5rem 0;
+    gap: 0.5rem;
+  }
+    
+  .gallery-section .section-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-item {
+    width: 150px;
+    height: 200px;
+  }
+}

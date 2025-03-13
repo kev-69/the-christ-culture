@@ -1,69 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
 
 .shop {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  display: flex;
+   flex-direction: column;
+   width: 100%;
 }
 
 .shop-banner {
-    height: 80vh;
-    height: 80vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('../assets/banners/shopbg1.PNG');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
+  height: 80vh;
+  height: 80vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('../assets/banners/shopbg1.PNG');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
 }
 
 .hero-content {
-    max-width: 800px;
-    padding: 0 2rem;
+  max-width: 800px;
+  padding: 0 2rem;
   }
   
-  .hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    font-family: "Julius Sans One";
-  }
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-family: "Julius Sans One";
+}
   
-  .hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-  }
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
 
-  /* Apparels Section */
-  .apparels {
-    padding: 2rem 0;
-    width: 1300px;
-    margin: 0 auto;
-  }
+/* Apparels Section */
+.apparels {
+  padding: 4rem 2rem;
+  text-align: center;
+  max-width: 1300px;
+}
 
-  .apparels h2 {
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    font-family: 'Julius Sans One', sans-serif;
-    text-align: center;
-  }
+.apparels h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-family: 'Julius Sans One', sans-serif;
+  text-align: center;
+}
   
-  .apparels h2::after {
-    content: '';
-    display: block;
-    width: 100px;
-    height: 3px;
-    background-color: #E6AE60;
-    margin: 0.5rem auto 0;
-  }
+.apparels h2::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 3px;
+  background-color: #E6AE60;
+  margin: 0.5rem auto 0;
+}
 
 .apparels-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  margin: 2rem 0;
-  padding: 0 1rem;
 }
 
 .apparel-card {
@@ -152,14 +150,26 @@
 @media (max-width: 768px) {
   .apparels {
     padding: 1rem 0;
-    width: 100%;
+    /* width: 100%; */
   }
 
   .apparels-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1rem;
     margin: 2rem 0;
     padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .apparels {
+    padding: 1rem 0;
+    /* width: 100%; */
+  }
+
+  .apparels-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.5rem;
   }
 }

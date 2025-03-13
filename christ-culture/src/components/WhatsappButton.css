@@ -1,64 +1,64 @@
 .whatsapp-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25D366; /* WhatsApp green color */
-    color: white;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366; /* WhatsApp green color */
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000; /* Ensure it stays above other content */
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: fixed;
+}
+  
+.whatsapp-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+  
+.whatsapp-icon {
+  width: 36px;
+  height: 36px;
+}
+  
+/* Add animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    z-index: 1000; /* Ensure it stays above other content */
-    transition: all 0.3s ease;
-    text-decoration: none;
   }
-  
-  .whatsapp-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
   }
-  
-  .whatsapp-icon {
-    width: 36px;
-    height: 36px;
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
+}
   
-  /* Add animation */
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-    50% {
-      transform: scale(1.05);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-    }
-    100% {
-      transform: scale(1);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-  }
+/* Apply animation after a delay for better UX */
+.whatsapp-button {
+  animation: pulse 2s infinite;
+  animation-delay: 5s; /* Start pulsing after 5 seconds on page */
+}
   
-  /* Apply animation after a delay for better UX */
+/* Responsive design for mobile */
+@media (max-width: 768px) {
   .whatsapp-button {
-    animation: pulse 2s infinite;
-    animation-delay: 5s; /* Start pulsing after 5 seconds on page */
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
   }
-  
-  /* Responsive design for mobile */
-  @media (max-width: 768px) {
-    .whatsapp-button {
-      width: 50px;
-      height: 50px;
-      bottom: 15px;
-      right: 15px;
-    }
     
-    .whatsapp-icon {
-      width: 30px;
-      height: 30px;
-    }
+  .whatsapp-icon {
+    width: 30px;
+    height: 30px;
   }
+}
