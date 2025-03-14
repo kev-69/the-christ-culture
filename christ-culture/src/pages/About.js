@@ -193,7 +193,7 @@ const About = () => {
                 <i className="fas fa-envelope"></i>
               </div>
               <h3>Email Us</h3>
-              <p>info@thechristculture.com</p>
+              <p>thechristculture2020@gmail.com</p>
             </div>
             
             <div className="contact-method">
@@ -202,6 +202,7 @@ const About = () => {
               </div>
               <h3>Call Us</h3>
               <p>+233 25-767-7987</p>
+              <p>+233 55-958-1592</p>
             </div>
             
             <div className="contact-method">

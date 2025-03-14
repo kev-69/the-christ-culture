@@ -287,9 +287,8 @@
   border-radius: 4px;
   cursor: pointer;
   font-weight: 600;
-  transition: all 0.3s ease;
-  width: fit-content;
-  margin: 0 auto;
+  transition: background-color 0.3s ease;
+  margin-top: 0.5rem;
 }
 
 .product-card .view-button:hover {
@@ -491,5 +490,11 @@
   .gallery-item {
     width: 150px;
     height: 200px;
+  }
+}
+
+@media (max-width: 380px) {
+  .view-button {
+    font-size: 0.7rem;
   }
 }
