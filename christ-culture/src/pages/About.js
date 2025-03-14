@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react'
 import { Helmet } from 'react-helmet';
 import './About.css'
 
+import { FaInstagram, FaSnapchat, FaTiktok } from 'react-icons/fa';
+
 // Import images - replace with your actual paths
 import aboutHero from '../assets/banners/aboutbg1.PNG'
 import founderImage from '../assets/images/founder.jpg'
@@ -207,10 +209,10 @@ const About = () => {
             
             <div className="contact-method">
               <div className="contact-icon">
-                <i className="fab fa-instagram"></i>
+                <FaSnapchat size={40} />
               </div>
               <h3>Follow Us</h3>
-              <p>@thechristculture</p>
+              <p>@thechristcultur</p>
             </div>
           </div>
         </div>
