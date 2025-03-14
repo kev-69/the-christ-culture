@@ -205,6 +205,34 @@
   font-weight: bold;
   color: #E6AE60;
 }
+
+.original-price {
+  font-size: 0.95rem;
+  color: #777;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.strike-through {
+  text-decoration: line-through;
+}
+
+.discount-badge {
+  background-color: #e74c3c;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.discounted-price {
+  font-size: 1.25rem;
+  color: #e74c3c;
+  font-weight: 600;
+}
   
 .add-to-cart-btn {
   background-color: #E6AE60;

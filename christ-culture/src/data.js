@@ -57,7 +57,7 @@ const ApparelsData = [
             // person2: ,
         },
         isInStock: true,
-        discount: 0
+        discount: 16.83
     },
     {
         id: 2,
@@ -74,7 +74,7 @@ const ApparelsData = [
             // person2: ,
         },
         isInStock: true,
-        discount: 0
+        discount: 16.83
     },
     {
         id: 3,
@@ -91,7 +91,7 @@ const ApparelsData = [
             person2: chosenpersontwo
         },
         isInStock: true,
-        discount: 0
+        discount: 16.83
     },
     {
         id: 4,
@@ -108,7 +108,7 @@ const ApparelsData = [
             person2: christstrengthpersontwo,
         },
         isInStock: true,
-        discount: 0
+        discount: 16.83
     },
     {
         id: 5,
@@ -125,7 +125,7 @@ const ApparelsData = [
             // person2: ,
         },
         isInStock: true,
-        discount: 0
+        discount: 16.83
     },
     {
         id: 6,
@@ -142,7 +142,7 @@ const ApparelsData = [
             // person2: ,
         },
         isInStock: true,
-        discount: 0
+        discount: 16.83
     },
     {
         id: 7,
@@ -159,7 +159,7 @@ const ApparelsData = [
             // person2: ,
         },
         isInStock: true,
-        discount: 0
+        discount: 16.83
     },
     {
         id: 8,
@@ -176,7 +176,7 @@ const ApparelsData = [
             // person2: ,
         },
         isInStock: true,
-        discount: 0
+        discount: 16.83
     },
     {
         id: 9,
@@ -193,7 +193,7 @@ const ApparelsData = [
             person2: holyspiritpersontwo,
         },
         isInStock: true,
-        discount: 0
+        discount: 16.83
     },
     {
         id: 10,
@@ -210,7 +210,7 @@ const ApparelsData = [
             // person2: ,
         },
         isInStock: true,
-        discount: 0
+        discount: 16.83
     },
     {
         id: 11,
@@ -227,7 +227,7 @@ const ApparelsData = [
             // person2: ,
         },
         isInStock: true,
-        discount: 0
+        discount: 16.83
     },
     {
         id: 12,
@@ -244,7 +244,7 @@ const ApparelsData = [
             // person2: ,
         },
         isInStock: true,
-        discount: 0
+        discount: 16.83
     },
     {
         id: 13,
@@ -261,7 +261,7 @@ const ApparelsData = [
             person2: untilpersontwo,
         },
         isInStock: true,
-        discount: 0
+        discount: 16.83
     }
 ];
 

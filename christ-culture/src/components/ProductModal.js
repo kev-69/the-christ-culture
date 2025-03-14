@@ -107,11 +107,29 @@ const ProductModal = ({ product, isOpen, onClose }) => {
             
             <div className="product-price">
               <h3>Price</h3>
-              <p className="price">
-                GHS {selectedMaterial === 'light' ? 
-                  (product.lightPrice) : 
-                  (product.heavyPrice)}
-              </p>
+              {product.discount ? (
+                <>
+                  <p className="original-price">
+                    <span className="strike-through">
+                      GHS {selectedMaterial === 'light' ? 
+                        product.lightPrice : 
+                        product.heavyPrice}
+                    </span>
+                    <span className="discount-badge">-{product.discount}%</span>
+                  </p>
+                  <p className="discounted-price">
+                    GHS {selectedMaterial === 'light' ? 
+                      (product.lightPrice - (product.lightPrice * (product.discount / 100))).toFixed(2) : 
+                      (product.heavyPrice - (product.heavyPrice * (product.discount / 100))).toFixed(2)}
+                  </p>
+                </>
+              ) : (
+                <p className="price">
+                  GHS {selectedMaterial === 'light' ? 
+                    product.lightPrice : 
+                    product.heavyPrice}
+                </p>
+              )}
             </div>
             
             <button 
