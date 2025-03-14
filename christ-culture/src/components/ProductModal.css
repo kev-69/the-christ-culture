@@ -233,6 +233,12 @@
   color: #e74c3c;
   font-weight: 600;
 }
+
+.discounted-price span {
+  font-size: 0.9rem;
+  color: #777;
+  margin-left: 5px;
+}
   
 .add-to-cart-btn {
   background-color: #E6AE60;
