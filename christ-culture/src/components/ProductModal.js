@@ -37,7 +37,7 @@ const ProductModal = ({ product, isOpen, onClose }) => {
     const phoneNumber = "+233257677987"; // Update with your actual number
     
     // Create a pre-filled message
-    const message = `Hello! I'd like to make an enquiry about your product: \n\n*${product.title}*\n*Material: ${selectedMaterial === 'light' ? 'Semi-Heavy' : 'Heavy'} Cotton* \n*Price: GHS ${selectedMaterial === 'light' ? product.lightPrice : product.heavyPrice}* \n\nThank you!`;
+    const message = `Hello! I'd like to make an enquiry about your product: \n\n*${product.title}*\n*Material: ${selectedMaterial === 'light' ? 'Semi-Heavy' : 'Heavy'} Cotton* \n*Price: GHS ${selectedMaterial === 'light' ? (product.lightPrice - (product.lightPrice * (product.discount / 100))).toFixed(2) : (product.heavyPrice - (product.heavyPrice * (product.discount / 100))).toFixed(2)}* \n\nThank you!`;
 
     // Encode the message for URL
     const encodedMessage = encodeURIComponent(message);
