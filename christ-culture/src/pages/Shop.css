@@ -8,8 +8,8 @@
 
 .shop-banner {
   height: 80vh;
-  height: 80vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('../assets/banners/shopbg1.PNG');
+  height: 75vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('../assets/banners/homebg1.PNG');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -28,11 +28,35 @@
   font-size: 3.5rem;
   margin-bottom: 1rem;
   font-family: "Julius Sans One";
+  animation: fadeInDown 0.8s ease-out 0.9s forwards;
 }
   
 .hero-content p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
+  animation: fadeInUp 0.8s ease-out 0.9s forwards;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Apparels Section */

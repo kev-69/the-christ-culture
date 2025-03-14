@@ -103,8 +103,8 @@ const Home = () => {
           />
         ))}
         <div className="banner-content">
-            <h1 className='banner-overlay'>The Christ Culture</h1>
-            <p className='banner-description'>Faith-inspired apparel and lifestyle products</p>
+            <h1>The Christ Culture</h1>
+            <p>Faith-inspired apparel and lifestyle products</p>
             <a href='/shop' className='banner-btn btn btn-primary'>Shop Now</a>
         </div>
         </div>
@@ -112,7 +112,7 @@ const Home = () => {
       {/* Products Section */}
       <section className='products-section'>
         <div className="section-header">
-            <h2>Julians's Essentials</h2>
+            <h2>Julian's Essentials</h2>
             <a href="/shop" className="view-all">View All</a>
         </div>
         <div className='products-grid'>
