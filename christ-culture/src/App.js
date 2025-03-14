@@ -5,7 +5,7 @@ import WhatsAppButton from "./components/WhatsappButton";
 
 import Home from './pages/Home'
 import Shop from "./pages/Shop";
-import Collections from "./pages/Collections";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/shop" element={<Shop />} />
-              <Route path="/collections" element={<Collections />} />
+              <Route path="/about" element={<About />} />
             </Routes>
             <WhatsAppButton phoneNumber="+233257677987" message="Hello! I'd like to
             make an enquiry about your products." />

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Search, Menu, X } from 'lucide-react';
 import './Navbar.css';
 
-import logo from "../assets/images/image.png"
+import logo from "../assets/images/logo.png"
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,7 +35,7 @@ const Navbar = () => {
           <a href="/"><img src={logo} alt="The Christ Culture Logo" /></a>
         </div>
         
-        {!isMobile && <a href="/collections" className="nav-link">Collections</a>}
+        {!isMobile && <a href="/about" className="nav-link">About</a>}
         
         <div className="search-icon">
           <Search size={24} />
@@ -46,7 +46,7 @@ const Navbar = () => {
       {isMobile && isMenuOpen && (
         <div className="mobile-menu">
           <a href="/shop" className="nav-link">Shop</a>
-          <a href="/collections" className="nav-link">Collections</a>
+          <a href="/about" className="nav-link">About</a>
         </div>
       )}
     </nav>
