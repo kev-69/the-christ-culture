@@ -120,7 +120,7 @@ const ProductModal = ({ product, isOpen, onClose }) => {
                   <p className="discounted-price">
                     GHS {selectedMaterial === 'light' ? 
                       (product.lightPrice - (product.lightPrice * (product.discount / 100))).toFixed(2) : 
-                      (product.heavyPrice - (product.heavyPrice * (product.discount / 100))).toFixed(2)} <span>On Pre-Order</span>
+                      (product.heavyPrice - (product.heavyPrice * (product.discount / 100))).toFixed(2)}
                   </p>
                 </>
               ) : (
